@@ -1,0 +1,66 @@
+property_search_task:
+  description: >
+    Analyze the user query: "{query}" and extract key information about the property search request:
+    - Buy, rent, or sold?
+    - Desired location
+    - Property type
+    - Price range
+    - Bedrooms, bathrooms, features
+
+    Then, use the appropriate tools to search for properties that match these criteria.
+
+    ## Tool instructions
+    - You can combine multiple tools if needed, using the output of one tool as input to another.
+    - Many of the search tools have pagination, so you may need to use multiple tools to get a complete list of properties.
+    - Do not overwhelm the user with too many properties.
+    - Not all tools are necessary, use only the tools that are relevant to the search criteria.
+
+    If the query is ambiguous, ask the user for clarification.
+  expected_output: >
+    A well-structured list of property listings, each with rich metadata.
+  agent: property_search
+
+render_report:
+  description: >
+    Analyze the property list and create json object with property list
+  expected_output: >
+    A JSON object containing the property list with the following structure:
+    {
+      "properties": [
+        {
+          "address": "123 Main St",
+          "price": 100000,
+          "bedrooms": 3,
+          "bathrooms": 2,
+          "sqft": 1500,
+          "agent": "John Doe",
+          "agent_phone": "555-1234",
+          "agent_email": "john.doe@example.com",
+          "environmental_risk": "low",
+          "photos": [
+            "https://example.com/photo1.jpg",
+            "https://example.com/photo2.jpg",
+            "https://example.com/photo3.jpg"
+          ]
+        }
+      ]
+    }
+
+  agent: output_agent
+  output_file: output/property_list.json
+  context:
+    - property_search_task
+
+
+summarize_properties_task:
+  description: >
+    Create a short, natural markdown 3-5 line summary based on the property and WalkScore data provided.
+    No need to list every property — just highlight interesting trends, standout homes, or neighborhoods.
+    Mention things like walkability, transit, lifestyle convenience, and anything that stands out.
+    Keep it friendly, simple, and readable. Add images if available, and end with a quick suggestion or comparison.
+  expected_output: >
+    A human-sounding markdown summary with insights — no property-by-property breakdown.
+  agent: summarizer
+  context:
+    - property_search_task
+  output_file: output/property_summary.md

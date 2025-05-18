@@ -1,0 +1,52 @@
+{
+  "properties": [
+    {
+      "address": "1824 NW 61st St, Seattle, WA 98107",
+      "price": 1845000,
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "sqft": 2420,
+      "agent": "Sara Linden",
+      "agent_phone": "206-555-2345",
+      "agent_email": "sara.linden@realtyseattle.com",
+      "environmental_risk": "low",
+      "photos": [
+        "https://images.example.com/property1_1.jpg",
+        "https://images.example.com/property1_2.jpg",
+        "https://images.example.com/property1_3.jpg"
+      ]
+    },
+    {
+      "address": "5050 9th Ave NW, Seattle, WA 98107",
+      "price": 1499000,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "sqft": 2005,
+      "agent": "Lukas Owens",
+      "agent_phone": "206-555-8765",
+      "agent_email": "lukas.owens@pnwproperties.com",
+      "environmental_risk": "low",
+      "photos": [
+        "https://images.example.com/property2_1.jpg",
+        "https://images.example.com/property2_2.jpg",
+        "https://images.example.com/property2_3.jpg"
+      ]
+    },
+    {
+      "address": "6736 21st Ave NW, Seattle, WA 98117",
+      "price": 1750000,
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "sqft": 2300,
+      "agent": "Alicia Kim",
+      "agent_phone": "206-555-3210",
+      "agent_email": "alicia.kim@nwhomerealty.com",
+      "environmental_risk": "low",
+      "photos": [
+        "https://images.example.com/property3_1.jpg",
+        "https://images.example.com/property3_2.jpg",
+        "https://images.example.com/property3_3.jpg"
+      ]
+    }
+  ]
+}
