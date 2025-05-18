@@ -2,8 +2,8 @@ from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
-from crews.research_crew.realtor_tools import REALTOR_TOOLS
-from crews.research_crew.types import PropertyList
+from src.crews.research_crew.realtor_tools import REALTOR_TOOLS
+from src.crews.research_crew.types import PropertyList
 
 MODEL = "openai/gpt-4.1"
 # MODEL = "groq/llama3-70b-8192"
