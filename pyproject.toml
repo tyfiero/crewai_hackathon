@@ -71,3 +71,6 @@ backend-path = ["."]
 
 [tool.uv]
 # uv specific configurations can go here 
+
+[tool.setuptools]
+packages = ["crews"] 
