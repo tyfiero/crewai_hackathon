@@ -12,11 +12,11 @@ from copilotkit.crewai import CrewAIAgent
 
 # Import CopilotKit FastAPI integration
 from copilotkit.integrations.fastapi import add_fastapi_endpoint
-from crews.research_crew.crew_manager import ResearchCrew, kickoff_crew
+from src.crews.research_crew.crew_manager import ResearchCrew, kickoff_crew
 from fastapi import BackgroundTasks, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, HttpUrl
-from realtor_router import router as realtor_router
+from src.realtor_router import router as realtor_router
 
 app = FastAPI(
     title="VetMyHomes API",
